@@ -1,0 +1,15 @@
+States
+//this should change a bit for two players in the future, currently this works for one person and ai
+
+WaitingForAction -> PlayerTurnLogic -> CheckForWin -> EnemyTurnLogic -> CheckForWin -> WaitingForAction
+				 -> QuitGame  					   -> GameOver						-> GameOver
+				 
+WaitingForAction: This is during the players turn while waiting for them to pick a card
+->QuitGame: Player quits the game //handle
+->PlayerTurnLogic: Player's turn is processed
+					->CheckForWin: Checks board to see if players are out of cards
+								->GameOver: If CheckForWin == true then process winner and end the game (This is where the exp/leveling/cards would be chosen)
+								->EnemyTurnLogic: Game is not over yet, process enemy turn
+												->CheckForWin: Checks board to see if players are out of cards
+															->GameOver: If CheckForWin == true then process winner and end the game
+															->WaitingForAction: This is during the players turn while waiting for them to pick a card

@@ -1,0 +1,20 @@
+How objects currently interact with each other
+
+Main.java
+~~~~~~~~~~~
+Contains an instance of MainMenuController
+Contains an instance of UserCardRepository //maybe delete
+
+MainMenuController
+~~~~~~~~~~~~~~~~~~
+Handles the click events for all of the buttons
+
+
+
+
+
+CardViewController
+~~~~~~~~~~~~~~~~~~
+Controls the CardViewGUI().
+
+CardViewGUI()
